@@ -1,0 +1,39 @@
+# =====================================================
+# Print Tracking Agent — runtime configuration
+# Copy to config.yaml next to the executable / script.
+#
+# All values can also be overridden by environment variables
+# named PRINT_AGENT_<KEY_IN_UPPERCASE>, e.g. PRINT_AGENT_API_BASE_URL.
+# =====================================================
+
+# Backend
+api_base_url: https://your-backend.onrender.com/api
+api_key: REPLACE-WITH-YOUR-AGENT-API-KEY     # must match backend AGENT_API_KEY
+api_timeout_seconds: 15
+verify_ssl: true
+
+# Polling cadence (seconds)
+poll_interval_seconds: 1.5
+job_grace_seconds: 4.0
+
+# Office printer (informational defaults)
+expected_printer_name: HP Smart Tank 660-670 series
+expected_printer_ip: 192.168.1.131
+expected_network: CKP_WSPACE
+
+# Optional whitelist (case-insensitive). Leave empty to track all printers.
+printer_whitelist: []
+# printer_whitelist:
+#   - HP Smart Tank 660-670 series
+
+# Offline queue (local SQLite buffer)
+queue_db_path: agent_offline_queue.sqlite3
+queue_max_age_days: 14
+queue_flush_interval_seconds: 30
+queue_batch_size: 25
+
+# Logging
+log_dir: logs
+log_level: INFO
+log_file_max_bytes: 5242880
+log_file_backup_count: 5

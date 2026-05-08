@@ -1,0 +1,52 @@
+# Render.com deployment blueprint for the FastAPI backend.
+# https://render.com/docs/blueprint-spec
+#
+# Usage:
+#   1. Push the repo to GitHub.
+#   2. In the Render dashboard, create a new "Blueprint" pointing to this file.
+#   3. Set the secret environment variables flagged with sync:false below.
+
+services:
+  - type: web
+    name: print-tracking-backend
+    runtime: python
+    plan: starter
+    region: oregon
+    rootDir: backend
+    branch: main
+    autoDeploy: true
+    buildCommand: pip install -r requirements.txt
+    startCommand: ./start.sh
+    healthCheckPath: /health
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: LOG_LEVEL
+        value: INFO
+      - key: API_V1_PREFIX
+        value: /api
+      - key: WEB_CONCURRENCY
+        value: "2"
+      - key: PYTHON_VERSION
+        value: 3.12.6
+      # ---- Secrets (configure in Render dashboard) ----
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET_KEY
+        sync: false
+      - key: AGENT_API_KEY
+        sync: false
+      - key: DEFAULT_ADMIN_USERNAME
+        sync: false
+      - key: DEFAULT_ADMIN_EMAIL
+        sync: false
+      - key: DEFAULT_ADMIN_PASSWORD
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+      - key: DEFAULT_PRINTER_NAME
+        value: HP Smart Tank 660-670 series
+      - key: DEFAULT_PRINTER_IP
+        value: 192.168.1.131
+      - key: DEFAULT_PRINTER_NETWORK
+        value: CKP_WSPACE

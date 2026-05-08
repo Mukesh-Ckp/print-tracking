@@ -1,0 +1,13 @@
+# ===== Print Tracking Agent =====
+# Runs only on Windows (uses pywin32, WMI). Python 3.10+
+
+requests==2.32.3
+PyYAML==6.0.2
+
+# Windows-specific: pywin32 ships win32print, win32service, etc.
+# WMI is a thin wrapper around pywin32 for COM enumeration.
+pywin32==306; platform_system == "Windows"
+WMI==1.5.1; platform_system == "Windows"
+
+# Build/install tooling (only required when freezing or installing the service)
+# pyinstaller==6.10.0

@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  @apply min-h-full bg-background text-text antialiased;
+}
+
+body {
+  font-feature-settings: 'cv03', 'cv04', 'cv11';
+}
+
+@layer components {
+  .glass-card {
+    @apply rounded-2xl border border-white/60 bg-white/85 backdrop-blur-sm shadow-soft;
+  }
+
+  .page-shell {
+    @apply duration-300;
+  }
+
+  .page-title {
+    @apply text-2xl font-semibold tracking-tight text-text;
+  }
+
+  .page-subtitle {
+    @apply mt-1 text-sm text-muted;
+  }
+
+  .status-dot {
+    @apply h-2 w-2 rounded-full bg-success animate-pulseSoft;
+  }
+}

@@ -1,0 +1,26 @@
+# ---- Core web framework ----
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+gunicorn==23.0.0
+
+# ---- Settings / validation ----
+pydantic==2.9.2
+pydantic-settings==2.6.1
+email-validator==2.2.0
+
+# ---- Database ----
+SQLAlchemy==2.0.36
+psycopg2-binary==2.9.10
+
+# ---- Auth ----
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+bcrypt==4.0.1
+
+# ---- Reports ----
+openpyxl==3.1.5
+reportlab==4.2.5
+
+# ---- Misc ----
+python-multipart==0.0.17
+python-dotenv==1.0.1
