@@ -101,6 +101,10 @@ The dashboard now loads, login with the admin credentials you set.
 This is the only thing that runs on-premise. It connects to the
 Render backend over HTTPS and authenticates with the `AGENT_API_KEY`.
 
+> **Before the agent:** set up **one Windows print server + shared printer**
+> so all laptops print to `\\SERVER\ShareName`. Step-by-step:
+> [`docs/PRINT-SERVER-SETUP.md`](PRINT-SERVER-SETUP.md).
+
 ### 4a. Copy the agent to the office PC
 
 Copy the entire `print-agent/` folder to the Main Office PC (the one

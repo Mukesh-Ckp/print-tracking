@@ -152,6 +152,7 @@ print-tracking-system/
 └── docs/
     ├── SETUP.md
     ├── DEPLOYMENT.md
+    ├── PRINT-SERVER-SETUP.md
     ├── ARCHITECTURE.md
     └── API.md
 ```
@@ -259,6 +260,7 @@ Step-by-step instructions live in [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
 
 * [`docs/SETUP.md`](docs/SETUP.md) — full local + production setup walkthrough
 * [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) — Render + Vercel + Neon deployment
+* [`docs/PRINT-SERVER-SETUP.md`](docs/PRINT-SERVER-SETUP.md) — one PC shared printer + laptops (no agent on laptops)
 * [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — components, threads, data flow
 * [`docs/API.md`](docs/API.md) — REST API reference
 
